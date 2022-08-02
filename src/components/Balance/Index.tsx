@@ -5,7 +5,7 @@ import { IBalance } from '../../interfaces/Balance'
 export default function Balance({ saldo, gastos }: IBalance) {
     return (
         <View style={styles.container}>
-            <View style={styles.item}>
+            <View>
                 <Text style={styles.itemTitle}>Saldo</Text>
                 <View style={styles.content}>
                     <Text style={styles.currencySymbol}>R$</Text>
@@ -13,7 +13,7 @@ export default function Balance({ saldo, gastos }: IBalance) {
                 </View>
             </View>
 
-            <View style={styles.item}>
+            <View >
                 <Text style={styles.itemTitle}>Gastos</Text>
                 <View style={styles.content}>
                     <Text style={styles.currencySymbol}>R$</Text>

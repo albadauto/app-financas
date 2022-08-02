@@ -41,12 +41,12 @@ interface IProps {
 }
 
 
-export default function Home() {
+export default function Home({ navigation }: any) {
   return (
     <View style={styles.container}>
-      <Header name="José Adauto" />
-      <Balance saldo={9250.17} gastos={-255.32} />
+
       <Actions />
+
       <Text style={styles.title}>Últimas movimentações</Text>
 
 

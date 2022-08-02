@@ -1,8 +1,11 @@
 import { ScrollView, StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
 import { AntDesign } from '@expo/vector-icons'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 export default function Actions() {
+  const navigation = useNavigation()
+
   return (
     <ScrollView style={styles.container} horizontal={true} showsHorizontalScrollIndicator={false}>
       <TouchableOpacity style={styles.actionButton}>
@@ -19,11 +22,11 @@ export default function Actions() {
         <Text style={styles.labelButton}>Compras</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.actionButton}>
+      <TouchableOpacity style={styles.actionButton} onPress={() => navigation.navigate("Carteira" as never)}>
         <View style={styles.areaButton}>
             <AntDesign name="creditcard" size={26} color="#000" />
         </View>
-        <Text style={styles.labelButton}>Carteira</Text>
+        <Text style={styles.labelButton} >Carteira</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.actionButton}>
