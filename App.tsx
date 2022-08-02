@@ -5,6 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import Carteira from "./src/pages/Carteira/Index";
 import Header from "./src/components/Header/Index";
 import Balance from "./src/components/Balance/Index";
+import FlashMessage from "react-native-flash-message";
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Stack.Screen name="Carteira" component={Carteira} options={{headerShown: false}}/>
 
       </Stack.Navigator>
+      <FlashMessage position="top" />
     </NavigationContainer>
     
     </>

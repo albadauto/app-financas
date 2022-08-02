@@ -1,6 +1,7 @@
 import { Button, NativeEventEmitter, NativeSyntheticEvent, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import { api } from '../../api';
+import { showMessage } from 'react-native-flash-message';
 
 interface ICarteira{
   saldo:string;
@@ -10,8 +11,8 @@ export default function Carteira({ navigation }: any) {
 
   const [ carteiraData, setCarteiraData ] = useState<ICarteira>({} as ICarteira);
   function onSubmit(){
-    api.post("/carteira", carteiraData).then((res) => {
-      console.log(res)
+    api.post("/carteira", carteiraData).then(() => {
+      showMessage({ message: "Cadastrado com sucesso", type: "success"})
     }).catch(err => console.log(err))
   }
   return (
